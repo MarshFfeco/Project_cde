@@ -11,11 +11,12 @@ class PageQuarto extends StatefulWidget {
 }
 
 class _PageQuartoState extends State<PageQuarto> {
-  QuartoSimples qs1 =
-      QuartoSimples(nomeQuarto: "nomeQuarto", quantidadeQuarto: 0);
+  QuartoSimples qs1 = QuartoSimples(nomeQuarto: "nome", quantidadeQuarto: 21);
 
   @override
   Widget build(BuildContext context) {
+    String nome;
+    int quantidade;
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
@@ -45,27 +46,59 @@ class _PageQuartoState extends State<PageQuarto> {
                       setState(() {});
                     }),
               ),
-              Text("Quartos"),
               Container(
-                  width: width * 0.5,
-                  height: height * 0.5,
-                  margin: const EdgeInsets.only(top: 15.0),
-                  padding: const EdgeInsets.all(3.0),
-                  decoration: BoxDecoration(
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 10,
-                        )
-                      ],
-                      border: Border.all(color: Colors.black12),
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                      color: Colors.white),
-                  child: Column(
-                    children: qs1.adds,
-                  ))
+                width: double.infinity,
+                height: height * 0.7,
+                margin: const EdgeInsets.only(top: 15.0),
+                padding: const EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 10,
+                      )
+                    ],
+                    border: Border.all(color: Colors.black12),
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    color: Colors.white),
+                child: Wrap(
+                  children: qs1.adds,
+                ),
+              )
             ],
           )),
+    );
+  }
+}
+
+class QuantidadeQuarto extends StatelessWidget {
+  QuantidadeQuarto({Key? key, required this.nome, required this.quantidade})
+      : super(key: key);
+
+  String nome;
+  int quantidade;
+  QuartoSimples qs2 = QuartoSimples(nomeQuarto: "", quantidadeQuarto: 0);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.topCenter,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(nome),
+          ),
+          SizedBox(
+            child: Wrap(
+              children: [
+                for (int i = 0; i < quantidade; i++)
+                  qs2.CriadorWidgetAlunosQuarto()
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
