@@ -28,7 +28,6 @@ abstract class Quarto {
 
   Widget CriadorWidgetQuarto() {
     Widget QuartoLuxo = Container(
-      height: 300,
       width: 300,
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -51,10 +50,11 @@ abstract class Quarto {
   }
 
   Widget CriadorWidgetAlunosQuarto() {
-    Widget AlunoQuarto = Container(
-      child: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Icon(Icons.person),
+    Widget AlunoQuarto = const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Icon(
+        Icons.add_box_sharp,
+        size: 50.0,
       ),
     );
 

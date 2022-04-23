@@ -4,4 +4,5 @@ A new Flutter project.
 
 - Adiciona Quartos simples e de Luxo
 - Organizar a quantidade de alunos no quarto
-- Version 0.0.2
+- Lista de quartos com Scroll
+- Version 0.0.3
