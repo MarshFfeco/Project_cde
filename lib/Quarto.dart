@@ -13,6 +13,8 @@ abstract class Quarto {
   })  : _nomeQuarto = nomeQuarto,
         _quantidadeQuarto = quantidadeQuarto;
 
+  List<Widget> get getAdds => adds;
+
   String get getNomeQuarto {
     return _nomeQuarto;
   }
@@ -71,19 +73,7 @@ class QuartoSimples extends Quarto {
           quantidadeQuarto: quantidadeQuarto,
         );
 
-  CriarQuartoSimples() {
-    if (adds.length <= 6) {
-      return;
-    } else {
-      print("Limite atingido");
-    }
-  }
-
-  CriarQuartoLuxo() {
-    if (adds.length <= 6) {
-      return adds.add(CriadorWidgetQuarto());
-    } else {
-      print("Limite atingido");
-    }
+  CriarQuarto() {
+    adds.add(CriadorWidgetQuarto());
   }
 }
