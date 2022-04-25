@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:fadbaquarto/components/OptionMenu.dart';
 import 'package:flutter/material.dart';
 
 import 'PageQuarto.dart';
@@ -16,7 +19,7 @@ abstract class Quarto {
   List<Widget> get getAdds => adds;
 
   String get getNomeQuarto {
-    return _nomeQuarto;
+    return _nomeQuarto.toUpperCase();
   }
 
   set setNomeQuarto(String nomeQuarto) => _nomeQuarto = nomeQuarto;
@@ -49,18 +52,6 @@ abstract class Quarto {
     );
 
     return QuartoLuxo;
-  }
-
-  Widget CriadorWidgetAlunosQuarto() {
-    Widget AlunoQuarto = const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Icon(
-        Icons.add_box_sharp,
-        size: 50.0,
-      ),
-    );
-
-    return AlunoQuarto;
   }
 }
 
